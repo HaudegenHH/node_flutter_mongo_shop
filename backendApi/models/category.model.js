@@ -16,7 +16,17 @@ const category = mongoose.model(
             categoryImage: {
                 type: String,
             }
-        }
+        },
+        {
+            toJSON: {
+                transform: function(doc, ret) {                    
+                    // unique _id that mongodb gives each document
+                    ret.categoryId = ret._id.toString();
+                    delete ret._id;
+                    delete ret._v;
+                } 
+            }
+        } 
     )
 )
 

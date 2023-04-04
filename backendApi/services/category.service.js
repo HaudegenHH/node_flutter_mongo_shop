@@ -45,7 +45,7 @@ async function getCategories(params, callback) {
 }
 
 async function getCategoryById(params, callback) {
-    const categoryId = params.categoryName
+    const categoryId = params.categoryId
     
     category
     .findById(categoryId)
@@ -61,7 +61,7 @@ async function getCategoryById(params, callback) {
 }
 
 async function updateCategory(params, callback) {
-    const categoryId = params.categoryName
+    const categoryId = params.categoryId
     
     category
     .findByIdAndUpdate(categoryId, params, {useFindAndModify: false})
@@ -77,7 +77,7 @@ async function updateCategory(params, callback) {
 }
 
 async function deleteCategory(params, callback) {
-    const categoryId = params.categoryName
+    const categoryId = params.categoryId
     
     category
     .findByIdAndDelete(categoryId)
